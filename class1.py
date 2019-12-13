@@ -26,7 +26,7 @@ class Cafe:
         to the price argument.
         """
         ###############YOUR CODE HERE#############
-        pass
+        self.menu[item] = price
         ##################END CODE################
 
     def add_stock(self, newstock):
@@ -38,7 +38,16 @@ class Cafe:
         a key in the cafe stock that represents that item, and add the corresponding number in newstock to it.
         """
         ###############YOUR CODE HERE#############
-        pass
+        self.newstock = newstock
+        sk = self.stock.keys() & self.newstock.keys()
+
+        for k in self.newstock:
+            for s in sk:
+                if s == k:
+                    self.stock[s] += self.newstock[s]
+                else:
+                    self.stock[k] = self.newstock[k]
+
         ##################END CODE################
 
 
@@ -51,7 +60,11 @@ class Cafe:
         in the order that are not in the cafe menu, return the string 'Not for sale' instead.
         """
         ###############YOUR CODE HERE#############
-        pass
+        # order{unique items in the order :number of each item in the order}
+        self.order = order
+
+
+        return()
         ##################END CODE################
 
 
@@ -67,7 +80,9 @@ class Cafe:
         case, running self.order_cost(order) will get you the value returned in the order_cost method.
         """
         ###############YOUR CODE HERE#############
-        pass
+        self.plorder=order
+
+        
         ##################END CODE################
 
 
