@@ -1,4 +1,5 @@
 #########IMPORT LIBRARIES HERE IF NEEDED#######
+import os
 
 ################END IMPORTS####################
 """
@@ -13,5 +14,16 @@ subdirectories. Return your list sorted in alphabetical order.
 
 def f(path):
     ##########YOUR CODE HERE##########
-    pass
+    p = path
+    l = []
+    for dl in os.listdir(p):
+        n = os.path.join(path,dl)
+
+        if os.path.isdir(n):
+            l.append(dl)
+
+    return(l)
+
+
+
     ###########END CODE###############

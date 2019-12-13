@@ -1,5 +1,5 @@
 #########IMPORT LIBRARIES HERE IF NEEDED#######
-
+import datetime
 ################END IMPORTS####################
 """
 Write a function that takes 2 strings s1 and s2 as inputs. These strings will represent times of the day and will be written in the format
@@ -10,5 +10,15 @@ things easiest. For example, f('08:59:59','10:24:31') should return 5072.
 
 def f(s1, s2):
     ##########YOUR CODE HERE##########
-    pass
+    sd1 = datetime.datetime.strptime(s1, '%H:%M:%S')
+    sd2 = datetime.datetime.strptime(s2, '%H:%M:%S')
+
+    if sd2 >= sd1:
+        d = sd2 - sd1
+    else:
+        print('error')
+        d = -1
+
+    return(d.total_seconds())
+
     ###########END CODE###############

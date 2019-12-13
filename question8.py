@@ -12,5 +12,12 @@ See https://www.pythonforbeginners.com/files/reading-and-writing-files-in-python
 
 def f(path):
     ##########YOUR CODE HERE##########
-    pass
+    obj = open(path,"r")
+
+    st = obj.read()
+    l = st.strip()
+
+    obj.close()
+    return(l)
+        
     ###########END CODE###############

@@ -13,5 +13,17 @@ Note that the order of the key value pairs in the resulting dictionary does not 
 
 def f(s):
     ##########YOUR CODE HERE##########
-    pass
+    cs =''
+    #Remove all commas, periods, question marks, exclamation points
+    cs = s.replace(',','')
+    cs = cs.replace('.','')
+    cs = cs.replace('?','')
+    cs = cs.replace('!','')
+    cs = cs.lower() #change all letters to lower characters
+
+    l = cs.split(" ")
+    d = Counter(l)
+
+    return(d)
+
     ###########END CODE###############
