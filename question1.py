@@ -9,5 +9,12 @@ location. For example, f([1,2,3,2,3,1]) should return 4.
 """
 def f(l):
     ##########YOUR CODE HERE##########
-    pass
+    x = 0   #max number
+    y = 0   #index
+    for n in l:
+        if n >= x:
+            x = n
+        y += 1
+
+    return(y)
     ###########END CODE###############

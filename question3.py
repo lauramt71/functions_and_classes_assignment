@@ -16,5 +16,15 @@ return None, None.
 
 def f(x1, y1, x2, y2):
     ##########YOUR CODE HERE##########
-    pass
+    #y = mx + b
+    if x1 == x2:    # check vertical line -> x1 == x2
+        return('None,None')
+    else:
+        x = x1 - x2
+        y = y1 - y2
+
+        m = (y1 - y2)/(x1 - x2)
+        b = y1 - m * x1 
+
+    return(m,b)
     ###########END CODE###############
