@@ -62,9 +62,23 @@ class Cafe:
         ###############YOUR CODE HERE#############
         # order{unique items in the order :number of each item in the order}
         self.order = order
+        cost = 0
 
+        same = self.order.keys() & self.menu.keys()
 
-        return()
+        if len(same) == 0:          #Not in the cafe menu
+            return('Not for sale')
+
+        for x in self.order:
+            for n in self.menu:
+                if x == n:
+                    cost = self.order[x] * self.menu[n]
+                    tcost = tcost + cost
+
+        for x in same.keys():
+                cost = cost + self.order[x] * self.memu[x]
+
+        return(cost)    #cost of the order
         ##################END CODE################
 
 
@@ -80,9 +94,28 @@ class Cafe:
         case, running self.order_cost(order) will get you the value returned in the order_cost method.
         """
         ###############YOUR CODE HERE#############
-        self.plorder=order
+        self.order=order
+        cost = 0
 
-        
+        plc = self.order.keys() & menu.keys()               #if ordered things are all in the menu
+        if len(plc) == 0:
+                                             #if not in the menu
+    #        print('Not for sale')
+            return(False)
+
+        for i in plc.keys():                                       #if in the menu
+            if stock[i] >= self.order[i]:       #if enough items in the stock
+                stock[i] = stock[i] - self.order[i]
+                cost = cost + order_cost()
+            else:
+                return(False)
+
+        self.money = self.money + order_cost(plc)
+
+        return(True)
+
+
+ bvu
         ##################END CODE################
 
 
@@ -94,5 +127,9 @@ if __name__ == '__main__':
     """
     sbux = Cafe({'coffee':2,'mocha':3,'bagel':2.5}, {'coffee':10, 'mocha':5, 'bagel':7, 'tea':20})
     #########CREATE TEST CASES HERE###########
-    pass
+
+
+
+
+
     ##########END TEST CASES##################
