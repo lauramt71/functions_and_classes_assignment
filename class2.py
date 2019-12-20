@@ -79,7 +79,12 @@ class TrendLine:
         then be m * x_i + b where m and b are the values calculated in the fit method.
         """
         #######YOUR CODE HERE##########
-        pass
+        self.x = X
+        for i in self.x:
+            y.append((self.m * self.x[i])+b)
+
+        self.y = y
+
         ##########END CODE#############
 
     def score(self, X, Y):
