@@ -20,7 +20,53 @@ class TrendLine:
         for the equations used to calculate m and b based off the data.
         """
         #######YOUR CODE HERE##########
-        pass
+#
+# # NOTE
+#
+# n = number of values
+#
+# y = mx + b
+#   a = n{(x1*y1)+(x2*y2)+(x3*y3)}
+#   b = (x1+x2+x3)*(y1+y2+y3)
+#   c = n(x1**2 + x2**2 + x3**2)
+#   d = (x1+x2+x3)**2
+#   m = (a-b) / (c-d)  #slope
+#
+#   e = (y1+y2+y3)
+#   f = (m(x1+x2+x3))
+#   b = (e-f)/n
+
+        self.x = X
+        self.y = Y
+
+        n = len(self.x)
+        dt = 0
+        dc = 0
+        if n == False:
+            printf(not right data)
+            exit()
+
+        else:
+            for i in n:
+                dt = dt + (self.x[i]*self.y[i])
+                dc = dc + self.x[i]**2
+            a = n * dt
+
+        b = sum(x) * sum(y)
+        c =  n * dc
+        d = (sum(self.x)) ** 2
+
+        m = (a - b)/(c-d)       #slope
+
+        e = sum(self.y)
+        f = m * sum(self.y)
+
+        b = (e-f) / n
+
+        self.b = b
+        self.m = m
+
+        return()
         ##########END CODE#############
 
     def predict(self, X):
@@ -52,7 +98,7 @@ if __name__ == '__main__':
     """
     Create and run test cases here if you wish. There is a jupyter notebook that was created also that once you have
     finished writing this class, you should be able to run the cells and visualize the trendline created from this
-    code. The notebook is called TrendLine_Test.ipynb. 
+    code. The notebook is called TrendLine_Test.ipynb.
     """
     #########CREATE TEST CASES HERE###########
     pass
